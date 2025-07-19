@@ -19,7 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
             notes: "Discussed team structure and internships.",
             email: "alex.kim@microsoft.com",
             linkedin: "https://linkedin.com/in/alexkim"
-        }
+        },
+        {
+            name: "King Bob",
+            title: "Product Manager",
+            company: "Google",
+            date: "July 19, 2025",
+            notes: "Talked about Google APM structure.",
+            email: "king.bob@google.com",
+            linkedin: "https://linkedin.com/in/kingbob"
+          }
     ];
 
     contacts.forEach(contact => {
@@ -36,12 +45,17 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="card-back">
             <p><strong>Met on:</strong> ${contact.date}</p>
             <p><strong>Notes:</strong> ${contact.notes}</p>
+            <p><strong>Email:</strong> ${contact.email}</p>
+            <p><strong>LinkedIn:</strong> <a href="${contact.linkedin}" target="_blank">${contact.linkedin}</a></p>
           </div>
         </div>
       `;
 
         card.addEventListener("click", () => {
-            card.querySelector(".card-inner").classList.toggle("flipped");
+            const inner = card.querySelector(".card-inner");
+            if (inner) {
+                inner.classList.toggle("flipped");
+            }
         });
 
         dashboard.appendChild(card);
