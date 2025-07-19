@@ -1,28 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
     const dashboard = document.querySelector(".dashboard");
-  
+
     const contacts = [
-      {
-        name: "Jane Doe",
-        title: "Product Manager",
-        company: "Google",
-        date: "May 10, 2025",
-        notes: "Talked about PM interviews, growth at Google."
-      },
-      {
-        name: "Alex Kim",
-        title: "Software Engineer",
-        company: "Microsoft",
-        date: "June 2, 2025",
-        notes: "Discussed team structure and internships."
-      }
+        {
+            name: "Jane Doe",
+            title: "Product Manager",
+            company: "Google",
+            date: "May 10, 2025",
+            notes: "Talked about PM interviews, growth at Google.",
+            email: "jane.doe@gmail.com",
+            linkedin: "https://linkedin.com/in/janedoe"
+        },
+        {
+            name: "Alex Kim",
+            title: "Software Engineer",
+            company: "Microsoft",
+            date: "June 2, 2025",
+            notes: "Discussed team structure and internships.",
+            email: "alex.kim@microsoft.com",
+            linkedin: "https://linkedin.com/in/alexkim"
+        }
     ];
-  
+
     contacts.forEach(contact => {
-      const card = document.createElement("div");
-      card.className = "card";
-  
-      card.innerHTML = `
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
         <div class="card-inner">
           <div class="card-front">
             <h2>${contact.name}</h2>
@@ -35,11 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       `;
-  
-      card.addEventListener("click", () => {
-        card.querySelector(".card-inner").classList.toggle("flipped");
-      });
-  
-      dashboard.appendChild(card);
+
+        card.addEventListener("click", () => {
+            card.querySelector(".card-inner").classList.toggle("flipped");
+        });
+
+        dashboard.appendChild(card);
     });
-  });
+});
