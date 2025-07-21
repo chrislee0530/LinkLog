@@ -13,7 +13,7 @@ body {
 
 .card {
     width: 300px;
-    height: 200px;
+    height: 250px;
     perspective: 1000px;
     padding: 20px;
 
@@ -28,10 +28,9 @@ body {
     cursor: pointer;
 }
 
-
-.card.flipped .card-inner {
+.card-inner.flipped {
     transform: rotateY(180deg);
-}
+  }
 
 .card-front,
 .card-back {
@@ -43,16 +42,49 @@ body {
     padding: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
-}
-
-.card-front {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .card-back {
     transform: rotateY(180deg);
     background-color: #f0f2f5;
+}
+
+form#contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+form#contact-form input,
+form#contact-form textarea,
+form#contact-form button {
+  flex: 1 1 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+form#contact-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+form#contact-form button {
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+form#contact-form button:hover {
+  background-color: #005fa3;
 }
